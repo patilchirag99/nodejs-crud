@@ -7,6 +7,7 @@ const index = fs.readFileSync("index.html", "utf-8");
 const data = JSON.parse(fs.readFileSync("data.json", "utf-8"));
 let products = data.products;
 
+//Create a server
 const server = express();
 
 //bodyParser
@@ -63,6 +64,7 @@ server.patch("/products/:id", (req, res) => {
     res.json({product:"Updated"});
   });
 
+//Start the server
 server.listen(8086, () => {
   console.log("server started");
 });
